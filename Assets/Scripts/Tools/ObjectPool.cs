@@ -10,7 +10,7 @@ using UnityEngine;
  * It is preferred, but optional, to call PoolObjects first with a specified amount
  */
 
-public abstract class ObjectPool<T> : MonoBehaviour where T : MonoBehaviour
+public abstract class ObjectPool<T> : Singleton<ObjectPool<T>> where T : MonoBehaviour
 {
     [SerializeField] protected T prefab;
 
