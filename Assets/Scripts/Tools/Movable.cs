@@ -39,7 +39,7 @@ public class Movable : MonoBehaviour
     // coroutine move from current position to new position
     public IEnumerator MoveToPosition(Vector3 targetPosition)
     {
-        if (speed <= 1)
+        if (speed <= 0)
             Debug.LogWarning("Speed must be a positive number");
 
 
