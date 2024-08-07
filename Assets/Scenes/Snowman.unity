@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &83294522
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -360,7 +360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &867131784
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -457,8 +457,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0117a3bba4591cc45b2e8a10b77cc7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  prefab: {fileID: 3630520460801687227, guid: 16be1e5b7580baf4991dc9f46bf183d2, type: 3}
 --- !u!4 &1295579981
 Transform:
   m_ObjectHideFlags: 0
@@ -490,7 +488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1984233630
 SpriteRenderer:
   m_ObjectHideFlags: 0
