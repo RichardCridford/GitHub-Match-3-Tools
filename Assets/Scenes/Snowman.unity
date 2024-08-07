@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 1231840741}
   - component: {fileID: 1231840740}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Grid Output
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -604,6 +604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0117a3bba4591cc45b2e8a10b77cc7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dimensions: {x: 0, y: 0}
+  gridOutput: {fileID: 0}
 --- !u!4 &1295579981
 Transform:
   m_ObjectHideFlags: 0
@@ -812,8 +814,8 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1295579981}
   - {fileID: 840872550}
+  - {fileID: 1705298366}
   - {fileID: 1984233631}
   - {fileID: 83294523}
   - {fileID: 867131785}
-  - {fileID: 1705298366}
   - {fileID: 824360489}
