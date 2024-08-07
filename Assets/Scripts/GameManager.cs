@@ -4,49 +4,34 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    private ProjectilePool pool;
+    private MatchablePool pool;
 
     private void Start()
     {
-        pool = (ProjectilePool) ProjectilePool.Instance;
+        pool = (MatchablePool) MatchablePool.Instance;
 
-        pool.PoolObjects(5);
+        pool.PoolObjects(10);
 
         StartCoroutine(Demo());
     }
 
     private IEnumerator Demo()
     {
-        List<Projectile> projectileList = new List<Projectile>();
-        Projectile projectile; 
+        //get the pooled object
+        Matchable m = pool.GetPooledObject();
 
-        for (int i = 0; i != 7; ++i)
-        {
-            projectile = pool.GetPooledObject();
-            projectileList.Add(projectile);
-            projectile.Randomize();
-            projectile.gameObject.SetActive(true);
+        //set the object as active
+        m.gameObject.SetActive(true);
 
-            yield return new WaitForSeconds(0.5f);
-        }
-
-        for (int i = 0; i != 4; i++)
-        {
-            pool.ReturnObjectToPool(projectileList[i]);
-
-            yield return new WaitForSeconds(0.5f);
         
-        }
+        Vector3 randomPosition;
 
-        for (int i = 0; i != 7; ++i)
+        for (int i = 0; i != 7; i++)
         {
-            projectile = pool.GetPooledObject();
-            projectileList.Add(projectile);
-            projectile.Randomize();
-            projectile.gameObject.SetActive(true);
+            randomPosition = new Vector3(Random.Range(-6f, 6f), Random.Range(-4f, 4f));
 
-            yield return new WaitForSeconds(0.5f);
+            //making a call to the Moveable class
+            yield return StartCoroutine(m.MoveToPosition(randomPosition));
         }
-
     }
 }
