@@ -149,11 +149,28 @@ public abstract class GridSystem<T> : Singleton<GridSystem<T>>
     }
 
     //convert the grid data to string
+    public override string ToString()
+    {
+        string s = "";
 
+        for (int y = dimensions.y -1; y != -1; --y)
+        {
+            s += "[";
 
+            for (int x = 0; x != dimensions.x; ++x)
+            {
+                if (IsEmpty(x, y))
+                    s += "x";
 
+                else
+                    s += data[x, y].ToString();
 
-
-
+                if (x != dimensions.x - 1)
+                    s += ", ";
+            }
+            s += " ]\n";
+        }
+        return s;
+    }
 }
 
