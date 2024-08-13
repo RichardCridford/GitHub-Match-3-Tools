@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This class will allow organising anything into a grid system
+ * 
+ * You must call InitializeGrid with grid dimensions first
+ * the grid dimensions must be positive numbers
+ */
+
 public abstract class GridSystem<T> : Singleton<GridSystem<T>>
 {
     private T[,] data;
@@ -37,12 +44,14 @@ public abstract class GridSystem<T> : Singleton<GridSystem<T>>
         this.dimensions = dimensions;
 
         data = new T[dimensions.x, dimensions.y];
+
+        isReady = true;
     }
 
     // clear the entire grid
     public void Clear()
     {
-        //insitalize the array (which will wipe all the contents) 
+        // initialize the array (which will wipe all the contents) 
         data = new T[dimensions.x, dimensions.y];
     }
 
@@ -50,7 +59,7 @@ public abstract class GridSystem<T> : Singleton<GridSystem<T>>
     public bool CheckBounds(int x, int y)
     {
         if (!isReady)
-            Debug.LogError("Grid has not been initialised yet");
+            Debug.LogError("Grid has not been initialised.");
         
         return x >= 0 && x < dimensions.x && y >= 0 && y < dimensions.y;
     }
