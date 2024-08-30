@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
+    // putting in this comment as a test for Source control
+    
+    
     private MatchablePool pool;
     private MatchableGrid grid;
 
